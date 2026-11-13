@@ -7,10 +7,14 @@ import {
   LegalSectionTitle,
 } from "@/components/layouts/legal-page-layout";
 
+import { CONTACT_EMAIL } from "@/config/external-links";
+import { env } from "@/lib/env";
+import { routes } from "@/lib/routes";
+
 export const metadata: Metadata = {
-  title: "みらい議会AIインタビューデータ利用規約 | みらい議会",
+  title: "TENJO議会AIインタビューデータ利用規約 | TENJO議会",
   description:
-    "みらい議会のAIインタビューデータをオープンデータとして利用するにあたっての条件を定めています。",
+    "TENJO議会のAIインタビューデータをオープンデータとして利用するにあたっての条件を定めています。",
 };
 
 const CC_BY_LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/deed.ja";
@@ -18,7 +22,7 @@ const CC_BY_LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/deed.ja";
 export default function InterviewDataTermsPage() {
   return (
     <LegalPageLayout
-      title="みらい議会AIインタビューデータ利用規約"
+      title="TENJO議会AIインタビューデータ利用規約"
       enLabel="Data Terms"
       className="pt-24 md:pt-12"
     >
@@ -28,13 +32,14 @@ export default function InterviewDataTermsPage() {
         </LegalParagraph>
 
         <LegalParagraph>
-          本規約は、政治団体「チームみらい」（以下「当組織」といいます。）が運営する「みらい議会」のAIインタビュー機能（以下「みらい議会AIインタビュー機能」といいます。）を通じて取得した回答内容に基づき、当組織がオープンデータとして公開するデータセット（以下「本データ」といいます。）を、第三者（以下「利用者」といいます。）が利用するにあたっての条件を定めるものです。利用者は、本データをダウンロードまたは利用することにより、本規約に同意したものとみなされます。
+          本規約は、「TENJO
+          KANAZAWA」（以下「当組織」といいます。）が運営する「TENJO議会」のAIインタビュー機能（以下「TENJO議会AIインタビュー機能」といいます。）を通じて取得した回答内容に基づき、当組織がオープンデータとして公開するデータセット（以下「本データ」といいます。）を、第三者（以下「利用者」といいます。）が利用するにあたっての条件を定めるものです。利用者は、本データをダウンロードまたは利用することにより、本規約に同意したものとみなされます。
         </LegalParagraph>
 
         <section className="space-y-4">
           <LegalSectionTitle>第1条（本データの内容）</LegalSectionTitle>
           <LegalParagraph>
-            利用者が利用することのできる本データは、みらい議会AIインタビュー機能を通じて取得した回答ログおよびサマリーのうち、回答者本人が公開に同意したものから、氏名、住所、連絡先その他特定の個人を識別できる情報を除去したものに限られます。
+            利用者が利用することのできる本データは、TENJO議会AIインタビュー機能を通じて取得した回答ログおよびサマリーのうち、回答者本人が公開に同意したものから、氏名、住所、連絡先その他特定の個人を識別できる情報を除去したものに限られます。
           </LegalParagraph>
         </section>
 
@@ -89,9 +94,9 @@ export default function InterviewDataTermsPage() {
           </LegalParagraph>
           <LegalList
             items={[
-              "データ出典：「みらい議会AIインタビュー（チームみらい）」",
-              "データ提供元URL：https://gikai.team-mir.ai/",
-              "本規約のURL：https://gikai.team-mir.ai/developers/interview-data-terms",
+              "データ出典：「TENJO議会AIインタビュー（TENJO KANAZAWA）」",
+              `データ提供元URL：${env.webUrl}`,
+              `本規約のURL：${new URL(routes.interviewDataTerms(), env.webUrl).toString()}`,
               {
                 id: "license",
                 content: (
@@ -162,7 +167,7 @@ export default function InterviewDataTermsPage() {
           <LegalParagraph>
             本規約および本データに関するお問い合わせは、下記までご連絡ください。
           </LegalParagraph>
-          <LegalParagraph>support@team-mir.ai</LegalParagraph>
+          <LegalParagraph>{CONTACT_EMAIL}</LegalParagraph>
         </section>
       </Container>
     </LegalPageLayout>

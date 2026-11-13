@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { isInterviewPage } from "@/lib/page-layout-utils";
 import { routes } from "@/lib/routes";
+import { EXTERNAL_LINKS } from "@/config/external-links";
 import { policyLinks, primaryLinks } from "./footer.config";
 
 export function Footer() {
@@ -21,6 +22,7 @@ export function Footer() {
         <FooterLogoSection />
         <FooterPrimaryLinks />
         <FooterPolicies />
+        <FooterForkNotice />
         <FooterCopyright />
       </div>
     </footer>
@@ -30,11 +32,11 @@ export function Footer() {
 function FooterLogoSection() {
   return (
     <div className="flex flex-col items-center text-center mb-9">
-      <Link href={routes.home()} aria-label="みらい議会 トップページ">
+      <Link href={routes.home()} aria-label="TENJO議会 トップページ">
         <Image
           src="/img/logo.svg"
-          alt="みらい議会"
-          width={150}
+          alt="TENJO議会"
+          width={128}
           height={128}
           className="h-auto"
         />
@@ -91,10 +93,54 @@ function FooterPolicies() {
   );
 }
 
+/**
+ * fork ガイドラインで求められる免責文言と、fork 元・ソースコードへのリンク
+ */
+function FooterForkNotice() {
+  const linkClass = "underline underline-offset-2 hover:text-slate-900";
+  return (
+    <div className="mb-5 flex flex-col gap-1 text-[12px] leading-relaxed text-slate-800">
+      <p className="font-semibold">
+        これは政党チームみらいが運営しているものではありません
+      </p>
+      <p>
+        本サービスは、チームみらいが公開している
+        <a
+          href={EXTERNAL_LINKS.UPSTREAM_SITE}
+          target="_blank"
+          rel="noreferrer"
+          className={linkClass}
+        >
+          「みらい議会」
+        </a>
+        の
+        <a
+          href={EXTERNAL_LINKS.UPSTREAM_REPO}
+          target="_blank"
+          rel="noreferrer"
+          className={linkClass}
+        >
+          ソースコード
+        </a>
+        （AGPL-3.0）を改変して、TENJO KANAZAWAが運営しています。改変後の
+        <a
+          href={EXTERNAL_LINKS.GITHUB_REPO}
+          target="_blank"
+          rel="noreferrer"
+          className={linkClass}
+        >
+          ソースコードはこちら
+        </a>
+        で公開しています。
+      </p>
+    </div>
+  );
+}
+
 function FooterCopyright() {
   return (
     <div className="text-center text-sm font-medium text-slate-800">
-      © 2025 Team Mirai All rights Reserved
+      © 2026 TENJO KANAZAWA
     </div>
   );
 }

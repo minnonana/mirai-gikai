@@ -29,7 +29,7 @@ export function registerSupplementaryResolutionTools(server: McpServer): void {
     {
       title: "附帯決議を取得",
       description:
-        "指定議案に付された附帯決議と、それに対するチームみらいの賛否を返す。未設定なら resolution=null。referenceUrl は附帯決議の内容を確認できる参考リンク、stance は for（賛成）/ against（反対）、focusPoints は附帯決議で重視した事項、reason は理由（いずれも未設定なら null）。",
+        "指定議案に付された附帯決議と、それに対するTENJO KANAZAWAの賛否を返す。未設定なら resolution=null。referenceUrl は附帯決議の内容を確認できる参考リンク、stance は for（賛成）/ against（反対）、focusPoints は附帯決議で重視した事項、reason は理由（いずれも未設定なら null）。",
       inputSchema: {
         billId: z.string().uuid(),
       },

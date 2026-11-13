@@ -149,10 +149,10 @@ export default async function Home() {
       )}
 
       <Container>
-        {/* みらい議会とは セクション */}
+        {/* TENJO議会とは セクション */}
         <About />
 
-        {/* チームみらいについて セクション */}
+        {/* TENJO KANAZAWAについて セクション */}
         <TeamMirai />
 
         {/* 免責事項 */}
