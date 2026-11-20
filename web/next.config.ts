@@ -17,6 +17,17 @@ const nextConfig: NextConfig = {
       destination: "/developers/interview-data-terms",
       permanent: true,
     },
+    {
+      // インタビューを /i/[id] へ移動した際の旧URL互換（配布済みのリンクやQRを生かす）
+      source: "/bills/:id/interview/:path*",
+      destination: "/i/:id/:path*",
+      permanent: true,
+    },
+    {
+      source: "/preview/bills/:id/interview/:path*",
+      destination: "/preview/i/:id/:path*",
+      permanent: true,
+    },
   ],
   turbopack: {
     root: "../",

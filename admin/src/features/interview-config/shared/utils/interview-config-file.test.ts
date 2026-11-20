@@ -23,6 +23,11 @@ const config: InterviewConfig = {
   updated_at: "2025-01-01T00:00:00Z",
   deleted_at: null,
   published_at: null,
+  template: "blank",
+  report_visibility: "private",
+  is_listed: false,
+  target_audience: null,
+  first_published_at: null,
 };
 
 const questions: InterviewQuestion[] = [

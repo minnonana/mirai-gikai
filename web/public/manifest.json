@@ -1,7 +1,7 @@
 {
-  "name": "TENJO議会",
-  "short_name": "TENJO議会",
-  "description": "国会で今どんな法案が検討されているか、わかりやすく伝えるプラットフォーム",
+  "name": "TENJO インタビュー",
+  "short_name": "TENJO インタビュー",
+  "description": "AIがチャットで、あなたの声をていねいに聞き取るインタビューサービス",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F7F4F0",

@@ -27,7 +27,7 @@ describe("toOpenDataOpenInterviewItem", () => {
       thumbnailUrl: "https://example.com/thumb.png",
       estimatedDurationMinutes: 15,
       interviewUrl:
-        "https://gikai.example.com/bills/123e4567-e89b-12d3-a456-426614174000/interview",
+        "https://gikai.example.com/i/123e4567-e89b-12d3-a456-426614174000",
       createdAt: "2026-10-01T00:00:00+00:00",
     });
   });
@@ -36,9 +36,7 @@ describe("toOpenDataOpenInterviewItem", () => {
     expect(
       toOpenDataOpenInterviewItem(baseRow, "https://gikai.example.com/")
         .interviewUrl
-    ).toBe(
-      "https://gikai.example.com/bills/123e4567-e89b-12d3-a456-426614174000/interview"
-    );
+    ).toBe("https://gikai.example.com/i/123e4567-e89b-12d3-a456-426614174000");
   });
 
   it("コンテンツ・サムネイル・目安時間が無い場合は空文字・null にする", () => {

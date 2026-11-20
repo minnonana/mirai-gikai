@@ -13,6 +13,10 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { getInterviewChatLink } from "@/features/interview-config/shared/utils/interview-links";
+import {
+  getConsentNotes,
+  type ReportVisibility,
+} from "@/features/interview-config/shared/utils/respondent-copy";
 import { routes } from "@/lib/routes";
 
 interface InterviewConsentModalProps {
@@ -20,6 +24,7 @@ interface InterviewConsentModalProps {
   onOpenChange: (open: boolean) => void;
   billId: string;
   previewToken?: string;
+  reportVisibility?: ReportVisibility;
 }
 
 export function InterviewConsentModal({
@@ -27,6 +32,7 @@ export function InterviewConsentModal({
   onOpenChange,
   billId,
   previewToken,
+  reportVisibility = "private",
 }: InterviewConsentModalProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
@@ -59,11 +65,9 @@ export function InterviewConsentModal({
 
         <div className="flex flex-col gap-6 mt-6">
           <ul className="flex flex-col gap-3 list-disc pl-5 text-sm font-bold text-gray-800 leading-[22px]">
-            <li>回答データはTENJO KANAZAWA内での政策検討に利用します。</li>
-            <li>個人情報や機密情報の記載はお控えください。</li>
-            <li>
-              インタビュー回答後に公開を許可するかを選択できます。公開を許可した場合、のちにTENJO議会に全文が掲載される場合があります。
-            </li>
+            {getConsentNotes(reportVisibility).map((note) => (
+              <li key={note}>{note}</li>
+            ))}
           </ul>
 
           <div className="flex items-center gap-3">

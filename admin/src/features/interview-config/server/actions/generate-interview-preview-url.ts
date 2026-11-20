@@ -23,11 +23,7 @@ export async function generateInterviewPreviewUrl(
 
     return {
       success: true,
-      url: buildPreviewUrl(
-        env.webUrl,
-        `/preview/bills/${billId}/interview`,
-        tokenInfo.token
-      ),
+      url: buildPreviewUrl(env.webUrl, `/preview/i/${billId}`, tokenInfo.token),
       token: tokenInfo.token,
       expiresAt: tokenInfo.expiresAt,
     };

@@ -110,6 +110,16 @@
   --color-mirai-gradient-start: #8fb8de;
   --color-mirai-gradient-end: #d3e4f3;
 
+  /* Interview template badges（用途別テンプレートのバッジ） */
+  --color-template-post-use-bg: #e4eef8;
+  --color-template-post-use-fg: #2f5d8a;
+  --color-template-street-bg: #f6e7d8;
+  --color-template-street-fg: #8a4b1f;
+  --color-template-needs-bg: #e3f0e6;
+  --color-template-needs-fg: #2d6a3e;
+  --color-template-blank-bg: #f1f1f1;
+  --color-template-blank-fg: #4b5159;
+
   /* Team Mirai brand (party design system) */
   --color-mirai-brand-teal: #3a6ea5;
   --color-mirai-brand-teal-hover: #285a8c;

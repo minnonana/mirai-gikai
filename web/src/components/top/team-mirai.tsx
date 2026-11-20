@@ -29,7 +29,7 @@ export function TeamMirai() {
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
             <p className="text-[15px] leading-[28px] text-black">
-              TENJO議会は、TENJO KANAZAWAが運営しています。
+              TENJO インタビューは、TENJO KANAZAWAが運営しています。
             </p>
             <p className="text-[13px] leading-[24px] text-mirai-text-note">
               これは政党チームみらいが運営しているものではありません。チームみらいが公開している「みらい議会」のソースコード（AGPL-3.0）を改変して作られています。

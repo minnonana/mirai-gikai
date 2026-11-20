@@ -4,9 +4,9 @@ import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { EXTERNAL_LINKS } from "@/config/external-links";
 import { isInterviewPage } from "@/lib/page-layout-utils";
 import { routes } from "@/lib/routes";
-import { EXTERNAL_LINKS } from "@/config/external-links";
 import { policyLinks, primaryLinks } from "./footer.config";
 
 export function Footer() {
@@ -32,10 +32,10 @@ export function Footer() {
 function FooterLogoSection() {
   return (
     <div className="flex flex-col items-center text-center mb-9">
-      <Link href={routes.home()} aria-label="TENJO議会 トップページ">
+      <Link href={routes.home()} aria-label="TENJO インタビュー トップページ">
         <Image
           src="/img/logo.svg"
-          alt="TENJO議会"
+          alt="TENJO インタビュー"
           width={128}
           height={128}
           className="h-auto"

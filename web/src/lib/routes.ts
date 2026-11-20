@@ -26,20 +26,19 @@ export const routes = {
       : (`/bills/${billId}/topics/${topicId}` as const),
 
   // ── インタビュー ──────────────────────────────────
-  interviewLP: (billId: string) => `/bills/${billId}/interview` as const,
-  interviewDisclosure: (billId: string) =>
-    `/bills/${billId}/interview/disclosure` as const,
-  interviewChat: (billId: string) => `/bills/${billId}/interview/chat` as const,
+  interviewLP: (billId: string) => `/i/${billId}` as const,
+  interviewDisclosure: (billId: string) => `/i/${billId}/disclosure` as const,
+  interviewChat: (billId: string) => `/i/${billId}/chat` as const,
 
   // ── プレビュー（token 付き） ──────────────────────
   previewBillDetail: (billId: string, token: string) =>
     `/preview/bills/${billId}?token=${encodeURIComponent(token)}` as const,
   previewInterviewLP: (billId: string, token: string) =>
-    `/preview/bills/${billId}/interview?token=${encodeURIComponent(token)}` as const,
+    `/preview/i/${billId}?token=${encodeURIComponent(token)}` as const,
   previewInterviewDisclosure: (billId: string, token: string) =>
-    `/preview/bills/${billId}/interview/disclosure?token=${encodeURIComponent(token)}` as const,
+    `/preview/i/${billId}/disclosure?token=${encodeURIComponent(token)}` as const,
   previewInterviewChat: (billId: string, token: string) =>
-    `/preview/bills/${billId}/interview/chat?token=${encodeURIComponent(token)}` as const,
+    `/preview/i/${billId}/chat?token=${encodeURIComponent(token)}` as const,
 
   // ── レポート ──────────────────────────────────────
   publicReport: (reportId: string) => `/report/${reportId}` as const,

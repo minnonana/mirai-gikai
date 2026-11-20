@@ -11,7 +11,7 @@ export default function LoginPage() {
             管理者ログイン
           </CardTitle>
           <p className="text-sm text-muted-foreground text-center">
-            TENJO議会 Admin
+            TENJO インタビュー 管理
           </p>
         </CardHeader>
         <CardContent>

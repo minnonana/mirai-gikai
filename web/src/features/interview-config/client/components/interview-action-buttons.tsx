@@ -2,7 +2,6 @@
 
 import { ArrowRight } from "lucide-react";
 import type { Route } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -10,18 +9,21 @@ import { getInterviewChatLink } from "@/features/interview-config/shared/utils/i
 import { NewInterviewButton } from "@/features/interview-session/client/components/new-interview-button";
 import { RestartInterviewButton } from "@/features/interview-session/client/components/restart-interview-button";
 import type { LatestInterviewSession } from "@/features/interview-session/server/loaders/get-latest-interview-session";
+import type { ReportVisibility } from "../../shared/utils/respondent-copy";
 import { InterviewConsentModal } from "./interview-consent-modal";
 
 interface InterviewActionButtonsProps {
   billId: string;
   sessionInfo: LatestInterviewSession | null;
   previewToken?: string;
+  reportVisibility?: ReportVisibility;
 }
 
 export function InterviewActionButtons({
   billId,
   sessionInfo,
   previewToken,
+  reportVisibility,
 }: InterviewActionButtonsProps) {
   const [showConsentModal, setShowConsentModal] = useState(false);
   const isActive = sessionInfo?.status === "active";
@@ -40,17 +42,10 @@ export function InterviewActionButtons({
       <>
         <Button
           asChild
-          className="w-full bg-mirai-gradient text-black border border-black rounded-[100px] h-[48px] px-6 font-bold text-[15px] hover:opacity-90 transition-opacity flex items-center justify-center gap-4"
+          className="w-full bg-primary text-primary-foreground rounded-full h-[54px] px-6 font-bold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-3"
         >
           <Link href={chatLink as Route}>
-            <Image
-              src="/icons/messages-square-icon.svg"
-              alt=""
-              width={24}
-              height={24}
-              className="object-contain"
-            />
-            <span>AIインタビューを再開する</span>
+            <span>続きから再開する</span>
             <ArrowRight className="size-5" />
           </Link>
         </Button>
@@ -68,16 +63,9 @@ export function InterviewActionButtons({
     <>
       <Button
         onClick={() => setShowConsentModal(true)}
-        className="w-full bg-mirai-gradient text-black border border-black rounded-[100px] h-[48px] px-6 font-bold text-[15px] hover:opacity-90 transition-opacity flex items-center justify-center gap-4"
+        className="w-full bg-primary text-primary-foreground rounded-full h-[54px] px-6 font-bold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-3"
       >
-        <Image
-          src="/icons/messages-square-icon.svg"
-          alt=""
-          width={24}
-          height={24}
-          className="object-contain"
-        />
-        <span>AIインタビューをはじめる</span>
+        <span>インタビューをはじめる</span>
         <ArrowRight className="size-5" />
       </Button>
 
@@ -86,6 +74,7 @@ export function InterviewActionButtons({
         onOpenChange={setShowConsentModal}
         billId={billId}
         previewToken={previewToken}
+        reportVisibility={reportVisibility}
       />
     </>
   );

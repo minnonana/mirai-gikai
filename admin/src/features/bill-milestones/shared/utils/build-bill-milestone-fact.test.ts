@@ -57,7 +57,7 @@ describe("buildBillMilestoneFact", () => {
       firstPublishedAt: "2026-11-10T01:00:00+00:00",
       urls: {
         bill: "https://example.com/bills/bill-1",
-        interview: "https://example.com/bills/bill-1/interview",
+        interview: "https://example.com/i/bill-1",
       },
     });
   });

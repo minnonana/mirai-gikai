@@ -26,15 +26,15 @@ const notoSerifJP = Noto_Serif_JP({
 
 const isDev = process.env.NODE_ENV === "development";
 const isStaging = process.env.VERCEL_TARGET_ENV === "staging";
-const siteTitle = "TENJO議会｜TENJO KANAZAWA";
+const siteTitle = "TENJO インタビュー｜TENJO KANAZAWA";
 const siteDescription =
-  "国会で今どんな法案が検討されているか、わかりやすく伝えるプラットフォーム";
-const siteName = "TENJO議会";
+  "AIがチャットで、あなたの声をていねいに聞き取るインタビューサービス";
+const siteName = "TENJO インタビュー";
 const ogImage = {
   url: "/ogp.jpg",
   width: 1200,
   height: 630,
-  alt: "TENJO議会のOGPイメージ",
+  alt: "TENJO インタビューのOGPイメージ",
 };
 
 export const metadata: Metadata = {
@@ -43,11 +43,9 @@ export const metadata: Metadata = {
   description: siteDescription,
   keywords: [
     siteName,
-    "議案",
-    "政治",
-    "日本",
-    "政策",
-    "解説",
+    "AIインタビュー",
+    "アンケート",
+    "調査",
     "TENJO KANAZAWA",
   ],
   icons: {
