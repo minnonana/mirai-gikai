@@ -149,9 +149,7 @@ describe("getOpenDataOpenInterviews", () => {
       thumbnailUrl: "https://example.com/thumb.png",
       estimatedDurationMinutes: 15,
     });
-    expect(item?.interviewUrl).toMatch(
-      new RegExp(`/bills/${newerBillId}/interview$`)
-    );
+    expect(item?.interviewUrl).toMatch(new RegExp(`/i/${newerBillId}$`));
   });
 
   it("難易度に応じたコンテンツを返す", async () => {

@@ -54,3 +54,26 @@ export async function findInterviewQuestionsByConfigId(
 
   return data;
 }
+
+/**
+ * トップに並べるインタビュー（受付中かつ一覧表示ON）を新しい順に取得
+ */
+export async function findListedPublicInterviews() {
+  const supabase = createAdminClient();
+  const { data, error } = await supabase
+    .from("interview_configs")
+    .select(
+      "id, bill_id, template, estimated_duration, target_audience, published_at, bills!inner(name, publish_status, bill_contents(title, difficulty_level))"
+    )
+    .eq("status", "public")
+    .eq("is_listed", true)
+    .is("deleted_at", null)
+    .eq("bills.publish_status", "published")
+    .order("published_at", { ascending: false, nullsFirst: false });
+
+  if (error) {
+    throw new Error(`Failed to fetch listed interviews: ${error.message}`);
+  }
+
+  return data;
+}

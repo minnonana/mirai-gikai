@@ -123,7 +123,7 @@ export function suggestBreakingNewsTitleLines(title: string): string {
   return lines.join("\n");
 }
 
-/** 画像に入れるチームみらいの賛否。色はみらい議会の賛否バッジに合わせる */
+/** 画像に入れるTENJO KANAZAWAの賛否。色はTENJO議会の賛否バッジに合わせる */
 export type BreakingNewsStance = {
   label: string;
   tone: "for" | "against" | "other";

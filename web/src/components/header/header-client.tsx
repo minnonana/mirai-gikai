@@ -32,24 +32,16 @@ export function HeaderClient({ difficultyLevel }: HeaderClientProps) {
       <div className="rounded-2xl bg-white shadow-sm mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo / Site Title */}
-          <div className="flex items-center">
+          <div className="flex min-w-0 items-center">
             <Link
               href={routes.home()}
-              className="flex items-center space-x-2"
+              className="flex min-w-0 items-center space-x-2"
               aria-label="ホーム"
             >
-              <Image
-                src="/img/logo.svg"
-                alt="みらい議会"
-                width={42}
-                height={36}
-              />
-              <Image
-                src="/img/service-logo.svg"
-                alt="みらい議会"
-                width={115}
-                height={21}
-              />
+              <Image src="/img/logo.svg" alt="" width={36} height={36} />
+              <span className="min-w-0 truncate text-base font-extrabold tracking-[0.06em] text-black sm:text-[19px]">
+                TENJO インタビュー
+              </span>
             </Link>
           </div>
 

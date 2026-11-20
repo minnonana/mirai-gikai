@@ -1,3 +1,12 @@
+> **この fork について（改変の明示）**
+>
+> このリポジトリは、チームみらいが公開している [team-mirai/mirai-gikai](https://github.com/team-mirai/mirai-gikai)（AGPL-3.0）を fork し、
+> TENJO KANAZAWA が「TENJO議会」として運営するために改変したものです（改変日: 2026-11-13）。
+> **これは政党チームみらいが運営しているものではありません。**
+>
+> 主な改変点: サービス名・運営者名、ロゴ / アイコン / OGP 画像、カラーテーマ、外部リンク、免責文言の追加、AI チャットのプロンプト内の運営者紹介。
+> 改変後のソースコードも AGPL-3.0 で公開します。
+
 # みらい議会
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/team-mirai-volunteer/mirai-gikai)

@@ -1,10 +1,11 @@
+import { Plus } from "lucide-react";
+import type { Route } from "next";
+import Link from "next/link";
 import { redirect } from "next/navigation";
+import { Button } from "@/components/ui/button";
 import { getCurrentAdmin } from "@/features/auth/server/lib/auth-server";
-import { AllInterviewConfigList } from "@/features/interviews/server/components/all-interview-config-list";
-import {
-  getAllInterviewConfigs,
-  getSessionCountsForConfigs,
-} from "@/features/interviews/server/loaders/get-all-interview-configs";
+import { InterviewProjectList } from "@/features/interview-projects/server/components/interview-project-list";
+import { getInterviewProjects } from "@/features/interview-projects/server/loaders/get-interview-projects";
 import { routes } from "@/lib/routes";
 
 export default async function InterviewsPage() {
@@ -14,21 +15,29 @@ export default async function InterviewsPage() {
     redirect(routes.login());
   }
 
-  const configs = await getAllInterviewConfigs();
-  const sessionCounts = await getSessionCountsForConfigs(
-    configs.map((config) => config.id)
-  );
+  const { projects, responseCounts } = await getInterviewProjects();
 
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-2xl font-bold mb-8">インタビュー管理</h1>
+    <div className="flex flex-col gap-6">
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div className="flex flex-col gap-1">
+          <h1 className="text-2xl font-bold">インタビュー</h1>
+          <p className="text-sm text-gray-600">
+            作成したAIインタビューの一覧です。
+          </p>
+        </div>
+        <Button asChild>
+          <Link href={routes.interviewNew() as Route}>
+            <Plus className="h-4 w-4" />
+            新しいインタビューを作る
+          </Link>
+        </Button>
+      </div>
 
-      <section className="rounded-lg border bg-white p-6">
-        <AllInterviewConfigList
-          configs={configs}
-          sessionCounts={sessionCounts}
-        />
-      </section>
+      <InterviewProjectList
+        projects={projects}
+        responseCounts={responseCounts}
+      />
     </div>
   );
 }

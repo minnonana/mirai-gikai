@@ -132,6 +132,8 @@ export async function createInterviewConfigRecord(params: {
   chat_model: string | null;
   estimated_duration: number | null;
   prompt_overrides: PromptOverridesByMode | null;
+  /** 用途別テンプレート。省略時は DB の既定値（blank） */
+  template?: InterviewConfig["template"];
 }): Promise<{ id: string }> {
   const supabase = createAdminClient();
   const { data, error } = await supabase

@@ -15,7 +15,7 @@ export function DesktopMenuLogo() {
       <div className="relative w-[116px] h-[98.38px]">
         <Image
           src="/img/logo.svg"
-          alt="みらい議会ロゴ"
+          alt="TENJO インタビューロゴ"
           fill
           className="object-contain"
           priority
@@ -32,7 +32,7 @@ export function DesktopMenuLogo() {
             letterSpacing: "0.1em",
           }}
         >
-          みらい議会
+          TENJO インタビュー
         </h1>
         <p
           className="font-bold text-black"
@@ -41,7 +41,7 @@ export function DesktopMenuLogo() {
             lineHeight: "2em",
           }}
         >
-          国会の議論をわかりやすく
+          あなたの声を、AIが聞き取ります
         </p>
       </div>
     </Link>

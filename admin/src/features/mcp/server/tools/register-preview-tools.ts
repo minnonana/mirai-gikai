@@ -29,7 +29,7 @@ export function registerPreviewTools(server: McpServer): void {
 
       const path =
         type === "interview"
-          ? `/preview/bills/${billId}/interview`
+          ? `/preview/i/${billId}`
           : `/preview/bills/${billId}`;
 
       const url = buildPreviewUrl(env.webUrl, path, tokenInfo.token);

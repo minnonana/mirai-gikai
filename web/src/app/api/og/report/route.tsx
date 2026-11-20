@@ -112,7 +112,7 @@ export async function GET(request: Request) {
               maxHeight: OG_BILL_NAME_MAX_HEIGHT,
               fontSize: 32,
               fontWeight: 800,
-              color: "#0f8472",
+              color: "#1f4468",
               lineHeight: 1.5,
               overflow: "hidden",
               wordBreak: "break-all",
@@ -122,7 +122,7 @@ export async function GET(request: Request) {
           </div>
         </div>
 
-        {/* みらい議会バッジ */}
+        {/* TENJO議会バッジ */}
         <div
           style={{
             position: "absolute",
@@ -149,7 +149,7 @@ export async function GET(request: Request) {
               letterSpacing: "0.03em",
             }}
           >
-            みらい議会
+            TENJO議会
           </span>
         </div>
 
@@ -157,14 +157,14 @@ export async function GET(request: Request) {
         {logoDataUrl && (
           // biome-ignore lint/performance/noImgElement: ignore
           <img
-            alt="チームみらいロゴ"
+            alt="TENJO KANAZAWAロゴ"
             src={logoDataUrl}
-            width={189}
-            height={160}
+            width={165}
+            height={140}
             style={{
               position: "absolute",
-              bottom: -24,
-              right: -18,
+              bottom: 16,
+              right: 16,
             }}
           />
         )}

@@ -1,4 +1,5 @@
 import { isMiraiStancePublished } from "@mirai-gikai/shared/mirai-stance/publish-schedule";
+import { buildRespondentUrl } from "@/features/interview-projects/shared/utils/respondent-url";
 import type { BillMilestoneFact, BillMilestoneSource } from "../types";
 
 /** null を無視して新しい方の日時を返す（SQL の greatest と同じ） */
@@ -68,6 +69,9 @@ export function buildBillMilestoneFact(
       })),
     stance: toStanceFact(source.mirai_stances, params.now),
     interview: toInterviewFact(source.interview_configs),
-    urls: { bill: billUrl, interview: `${billUrl}/interview` },
+    urls: {
+      bill: billUrl,
+      interview: buildRespondentUrl(params.webUrl, source.id),
+    },
   };
 }

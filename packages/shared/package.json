@@ -64,6 +64,10 @@
       "types": "./src/report-publication/count-public-reports.ts",
       "default": "./src/report-publication/count-public-reports.ts"
     },
+    "./interview-templates/templates": {
+      "types": "./src/interview-templates/templates.ts",
+      "default": "./src/interview-templates/templates.ts"
+    },
     "./interview-prompts/types": {
       "types": "./src/interview-prompts/types.ts",
       "default": "./src/interview-prompts/types.ts"

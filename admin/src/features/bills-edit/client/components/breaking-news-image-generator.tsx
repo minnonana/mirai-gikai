@@ -208,7 +208,7 @@ export function BreakingNewsImageGenerator({
           />
           <div className="space-y-1 leading-none">
             <Label htmlFor="breaking-news-stance">
-              チームみらいの賛否を入れる
+              TENJO KANAZAWAの賛否を入れる
               {publishedStance && `（${publishedStance.label}）`}
             </Label>
             <p className="text-sm text-muted-foreground">

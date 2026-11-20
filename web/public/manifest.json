@@ -1,11 +1,11 @@
 {
-  "name": "みらい議会",
-  "short_name": "みらい議会",
-  "description": "国会で今どんな法案が検討されているか、わかりやすく伝えるプラットフォーム",
+  "name": "TENJO インタビュー",
+  "short_name": "TENJO インタビュー",
+  "description": "AIがチャットで、あなたの声をていねいに聞き取るインタビューサービス",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F7F4F0",
-  "theme_color": "#2aa693",
+  "theme_color": "#2f5d8a",
   "orientation": "portrait-primary",
   "icons": [
     {

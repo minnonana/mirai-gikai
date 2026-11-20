@@ -520,12 +520,17 @@ export type Database = {
           created_at: string
           deleted_at: string | null
           estimated_duration: number | null
+          first_published_at: string | null
           id: string
+          is_listed: boolean
           mode: Database["public"]["Enums"]["interview_mode_enum"]
           name: string
           prompt_overrides: Json | null
           published_at: string | null
+          report_visibility: Database["public"]["Enums"]["interview_report_visibility_enum"]
           status: Database["public"]["Enums"]["interview_config_status_enum"]
+          target_audience: string | null
+          template: Database["public"]["Enums"]["interview_template_enum"]
           themes: string[] | null
           updated_at: string
         }
@@ -535,12 +540,17 @@ export type Database = {
           created_at?: string
           deleted_at?: string | null
           estimated_duration?: number | null
+          first_published_at?: string | null
           id?: string
+          is_listed?: boolean
           mode?: Database["public"]["Enums"]["interview_mode_enum"]
           name: string
           prompt_overrides?: Json | null
           published_at?: string | null
+          report_visibility?: Database["public"]["Enums"]["interview_report_visibility_enum"]
           status?: Database["public"]["Enums"]["interview_config_status_enum"]
+          target_audience?: string | null
+          template?: Database["public"]["Enums"]["interview_template_enum"]
           themes?: string[] | null
           updated_at?: string
         }
@@ -550,12 +560,17 @@ export type Database = {
           created_at?: string
           deleted_at?: string | null
           estimated_duration?: number | null
+          first_published_at?: string | null
           id?: string
+          is_listed?: boolean
           mode?: Database["public"]["Enums"]["interview_mode_enum"]
           name?: string
           prompt_overrides?: Json | null
           published_at?: string | null
+          report_visibility?: Database["public"]["Enums"]["interview_report_visibility_enum"]
           status?: Database["public"]["Enums"]["interview_config_status_enum"]
+          target_audience?: string | null
+          template?: Database["public"]["Enums"]["interview_template_enum"]
           themes?: string[] | null
           updated_at?: string
         }
@@ -1594,7 +1609,13 @@ export type Database = {
         | "misunderstood"
         | "too_many_questions"
         | "other"
+      interview_report_visibility_enum: "private" | "consented"
       interview_mode_enum: "loop" | "bulk" | "targeted"
+      interview_template_enum:
+        | "blank"
+        | "post_use_survey"
+        | "street_interview"
+        | "needs_research"
       interview_report_role_enum:
         | "subject_expert"
         | "work_related"
@@ -1772,7 +1793,14 @@ export const Constants = {
         "too_many_questions",
         "other",
       ],
+      interview_report_visibility_enum: ["private", "consented"],
       interview_mode_enum: ["loop", "bulk", "targeted"],
+      interview_template_enum: [
+        "blank",
+        "post_use_survey",
+        "street_interview",
+        "needs_research",
+      ],
       interview_report_role_enum: [
         "subject_expert",
         "work_related",

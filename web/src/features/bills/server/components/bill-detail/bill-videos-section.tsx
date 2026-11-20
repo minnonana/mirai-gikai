@@ -10,7 +10,7 @@ interface BillVideosSectionProps {
 }
 
 /**
- * 議案に紐づくYouTube動画。チームみらいの賛否カードの中に置き、
+ * 議案に紐づくYouTube動画。TENJO KANAZAWAの賛否カードの中に置き、
  * 議論の種類ごとに見出しを分けて表示する
  */
 export function BillVideosSection({ videos }: BillVideosSectionProps) {
